@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dmitry Dutin | rsschool-cv</title>
 
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Dmitry Dutin</h1>
+            <img src="dmitrydutin.jpg" alt="Dmitry Dutin" class="avatar" />
+            <hr />
+        </div>
+    </header>
+
+    <main class="main">
+        <section>
+            <div class="container">
+                <h2>Contacts</h2>
+                <ul>
+                    <li>
+                        <b>VK:</b>
+                        <a href="https://vk.com/dmitrydutin" target="_blank">dmitrydutin</a>
+                    </li>
+                    <li>
+                        <b>Telegram:</b> @Goslem
+                    </li>
+                    <li>
+                        <b>Discord:</b> Grozzlou#3472
+                    </li>
+                    <li>
+                        <b>LinkedIn:</b>
+                        <a href="https://www.linkedin.com/in/dmitrydutin/" target="_blank"
+                            >dmitrydutin</a
+                        >
+                    </li>
+                    <li>
+                        <b>Gmail:</b>
+                        <a href="mailto:dmitrydutin@gmail.com">dmitrydutin@gmail.com</a>
+                    </li>
+                    <li>
+                        <b>Phone:</b> <a href="tel:+375259126048">+375 (25) 912-60-48</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Summary</h2>
+                <p>I want to become a junior react developer at Epam.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML5 / CSS3</li>
+                    <li>JavaScript ES2020</li>
+                    <li>SQL / MYSQL</li>
+                    <li>Bootstrap</li>
+                    <li>PHP</li>
+                    <li>Node.js</li>
+                    <li>React.js</li>
+                    <li>Laravel</li>
+                    <li>Photoshop / Figma</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Experience</h2>
+                <ul>
+                    <li>Сourse and graduation projects at the university</li>
+                    <li>
+                        Took
+                        <a href="http://worldskills.by/index.php?id=665" target="_blank"
+                            >second place</a
+                        >
+                        in the qualifying round of the WorldSkills 2020 international
+                        competition
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Education</h2>
+                <p>
+                    <b>Minsk State College of Electronics</b> 2017 - 2021 Technician-programmer
+                </p>
+                <p><b>Itransition training center</b> April 2020 - June 2020 Trainee</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>English</h2>
+                <p>Pre-Intermediate (A2) in accordance with EPAM Training test results</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Code examples</h2>
+                <p>Javascript</p>
+
+                <pre>
+                    <code>
+async function uploadFile(file) {
+    if (file.type !== 'image/jpeg') {
+        alert('Select image!')
+    } else {
+        const url = 'https://api.cloudinary.com/v1_1/hajyom5vd/image/upload'
+        const formData = new FormData()
+        formData.append('file', file)
+        formData.append('upload_preset', 'chatitransition')
+
+        const res = await fetch(
+            'https://api.cloudinary.com/v1_1/hajyom5vd/image/upload',
+            {
+                method: 'POST',
+                body: formData
+            }
+        )
+        const result = await res.json()
+
+        const userId = sessionStorage.getItem('userId')
+        const name = sessionStorage.getItem('name')
+
+        socket.emit('send message', userId, name, result.secure_url)
+    }
+}
+                    </code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <hr>
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
